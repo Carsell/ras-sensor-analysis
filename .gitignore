@@ -2,3 +2,6 @@
 .venv/
 __pycache__/
 .ipynb_checkpoints/
+
+# Held-back answer key: used only for the final self-scoring cell.
+data/ras_sensors_truth.csv
