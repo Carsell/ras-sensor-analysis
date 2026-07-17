@@ -41,7 +41,6 @@ notebooks/
   01_cleaning.ipynb           data checks and cleaning
   02_analysis.ipynb           EDA and simple anomaly detection
 requirements.txt              Python packages
-INTERVIEW_NOTES.md            short explanation of my choices
 ```
 
 ## How to run
