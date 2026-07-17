@@ -20,7 +20,9 @@ The most useful lesson was that a sensor fault usually affected one measurement 
 - [01 — Data cleaning](notebooks/01_cleaning.ipynb): structure, missingness, validity checks and sensor-quality flags.
 - [02 — Analysis](notebooks/02_analysis.ipynb): EDA, feeding cycles, rolling z-score baseline and held-back scoring.
 
-The baseline uses the previous 21 days and applies `.shift(1)`, so the day being scored is not included in its own reference window.
+The baseline uses the previous 21 days and applies `.shift(1)`, so the day being scored is not included in its own reference window. The first event-day z-score is very large because the pre-event variance is extremely low; I use the threshold crossing as a detector, not the z-score magnitude as a severity measure.
+
+To find the event end, I freeze the pre-event three-standard-deviation threshold at the alert date. Recalculating the threshold during the event would let the rolling window adapt to the incident and close the alert too early.
 
 ## Normal daily behaviour
 
